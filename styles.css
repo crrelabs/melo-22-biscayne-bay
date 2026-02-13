@@ -1,41 +1,149 @@
+/* ===== 22 Biscayne Bay — Luxury Styles ===== */
+
+/* Smooth scroll */
 html { scroll-behavior: smooth; }
 
-.hero {
-  background: url('images/miami-skyline.jpg') center/cover no-repeat;
-  min-height: 100vh;
+/* Header */
+#header { transition: background 0.4s, padding 0.4s, box-shadow 0.4s; }
+#header.scrolled { background: rgba(15, 28, 40, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 30px rgba(0,0,0,0.3); }
+#header.scrolled .nav-link { color: rgba(255,255,255,0.85); }
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+.nav-link:hover { color: #c9a96e; }
+
+.mobile-link {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.mobile-link:hover { color: #c9a96e; }
+
+/* Hero */
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.amenities-bg {
-  background: url('images/pool-glasses-med.jpg') center/cover no-repeat fixed;
+/* Fade-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
+.fade-up.delay-1 { transition-delay: 0.2s; }
+.fade-up.delay-2 { transition-delay: 0.4s; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 
-.gallery-slider {
-  overflow: hidden;
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.delay-1 { transition-delay: 0.15s; }
+.reveal.delay-2 { transition-delay: 0.3s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Gallery */
+.gallery-item {
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
-
-.gallery-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.gallery-track img {
-  min-width: 100%;
+.gallery-item img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  height: 500px;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 42, 58, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a96e;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
+/* Floorplan tabs */
+.fp-tab {
+  padding: 0.75rem 2rem;
+  border: 2px solid #c9a96e;
+  color: #c9a96e;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s;
+}
+.fp-tab:hover, .fp-tab.active {
+  background: #c9a96e;
+  color: #fff;
+}
+.fp-panel { display: none; }
+.fp-panel.active { display: block; animation: fadeIn 0.5s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@media (min-width: 768px) {
-  .gallery-track img {
-    min-width: 50%;
-  }
+/* Amenity cards */
+.amenity-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,169,110,0.2);
+  backdrop-filter: blur(5px);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s;
+}
+.amenity-card:hover {
+  background: rgba(201,169,110,0.1);
+  border-color: rgba(201,169,110,0.5);
+  transform: translateY(-5px);
 }
 
-@media (min-width: 1024px) {
-  .gallery-track img {
-    min-width: 33.333%;
-  }
+/* Contact form */
+.contact-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0d5c1;
+  background: #fafaf8;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+  outline: none;
 }
+.contact-input:focus { border-color: #c9a96e; }
 
-.floorplan-content { display: none; }
-.floorplan-content.active { display: block; }
+/* Lightbox */
+#lightbox { transition: opacity 0.3s; }
+
+/* Selection */
+::selection { background: rgba(201,169,110,0.3); }
+
+/* Responsive parallax fix */
+@media (max-width: 768px) {
+  .hero-bg, #amenities > .absolute:first-child { background-attachment: scroll; }
+}

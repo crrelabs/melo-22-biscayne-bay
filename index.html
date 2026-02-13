@@ -5,249 +5,328 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>22 Biscayne Bay | Luxury Rental Apartments in Miami</title>
 <link rel="icon" href="images/favicon.png" sizes="32x32">
-<link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#1a365d','primary-light':'#4b7ca7','primary-dark':'#0f2440'},fontFamily:{heading:['"PT Sans Narrow"','sans-serif'],body:['Lato','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#1a2a3a','navy-light':'#243a4d','navy-dark':'#0f1c28',gold:'#c9a96e','gold-light':'#d4bb8a','gold-dark':'#b8944f'},fontFamily:{display:['Playfair Display','serif'],body:['Inter','sans-serif']}}}}</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-body text-gray-800">
-
-<!-- Top Bar -->
-<div class="bg-gray-900 text-gray-300 text-sm py-2 hidden md:block">
-<div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-<div class="flex items-center gap-6">
-<span><i class="fa fa-phone mr-1"></i> 305.576.5606</span>
-<a href="mailto:bay22biscayne@gmail.com" class="hover:text-white"><i class="fa fa-envelope mr-1"></i> bay22biscayne@gmail.com</a>
-</div>
-<div class="flex items-center gap-6">
-<span><i class="fa fa-map-marker-alt mr-1"></i> 615 NE 22nd Street, Miami, FL 33137</span>
-<a href="https://www.facebook.com/22-Biscayne-Bay-173418216038673" target="_blank" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
-</div>
-</div>
-</div>
+<body class="font-body text-gray-800 bg-white">
 
 <!-- Header -->
-<header class="bg-white shadow-sm">
-<div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-<a href="#home"><img src="images/22biscayne-logo.png" alt="22 Biscayne Bay" class="h-12"></a>
-<div class="md:hidden">
-<button id="menu-toggle" class="text-gray-700 text-2xl"><i class="fa fa-bars"></i></button>
-</div>
-</div>
+<header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-3">
+      <img src="images/22biscayne-logo.png" alt="22 Biscayne Bay" class="h-10 md:h-12">
+    </a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#gallery" class="nav-link">Photos</a>
+      <a href="#floorplans" class="nav-link">Floorplans</a>
+      <a href="#amenities" class="nav-link">Amenities</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden text-white text-2xl"><i class="fa fa-bars"></i></button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-navy-dark/95 backdrop-blur-md">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#gallery" class="mobile-link">Photos</a>
+    <a href="#floorplans" class="mobile-link">Floorplans</a>
+    <a href="#amenities" class="mobile-link">Amenities</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
 </header>
 
-<!-- Sticky Nav -->
-<nav id="navbar" class="bg-primary sticky top-0 z-50 shadow-md">
-<div class="max-w-7xl mx-auto px-4">
-<div class="hidden md:flex items-center justify-between">
-<div class="flex gap-1">
-<a href="#home" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">HOME</a>
-<a href="#about" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">ABOUT</a>
-<a href="#photos" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">PHOTOS</a>
-<a href="#floorplans" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">FLOORPLANS</a>
-<a href="#amenities" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">AMENITIES</a>
-<a href="#contact" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading">CONTACT</a>
-<a href="brochure.pdf" target="_blank" class="nav-link text-white px-3 py-4 text-sm font-semibold hover:bg-primary-dark transition font-heading"><i class="fa fa-download mr-1"></i>BROCHURE</a>
-</div>
-<a href="#contact" class="bg-primary-light hover:bg-white hover:text-primary text-white font-bold px-5 py-2 rounded text-sm transition font-heading">SCHEDULE VISIT</a>
-</div>
-<!-- Mobile menu -->
-<div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300">
-<a href="#home" class="block text-white px-4 py-3 border-b border-white/20 font-heading">HOME</a>
-<a href="#about" class="block text-white px-4 py-3 border-b border-white/20 font-heading">ABOUT</a>
-<a href="#photos" class="block text-white px-4 py-3 border-b border-white/20 font-heading">PHOTOS</a>
-<a href="#floorplans" class="block text-white px-4 py-3 border-b border-white/20 font-heading">FLOORPLANS</a>
-<a href="#amenities" class="block text-white px-4 py-3 border-b border-white/20 font-heading">AMENITIES</a>
-<a href="#contact" class="block text-white px-4 py-3 border-b border-white/20 font-heading">CONTACT</a>
-<a href="brochure.pdf" target="_blank" class="block text-white px-4 py-3 border-b border-white/20 font-heading">DOWNLOAD BROCHURE</a>
-<a href="#contact" class="block text-primary-light font-bold px-4 py-3 font-heading">SCHEDULE VISIT</a>
-</div>
-</div>
-</nav>
-
 <!-- Hero -->
-<section id="home" class="hero flex items-center justify-center text-center text-white relative">
-<div class="absolute inset-0 bg-black/50"></div>
-<div class="relative z-10 px-4">
-<p class="text-lg md:text-xl italic mb-4 font-light tracking-wide">Welcome to Luxury</p>
-<h1 class="text-4xl md:text-7xl font-bold tracking-widest mb-8 font-heading">22 BISCAYNE BAY</h1>
-<a href="#about" class="inline-block bg-primary-light hover:bg-primary text-white font-bold px-8 py-3 rounded transition font-heading tracking-wider">LEARN MORE</a>
-</div>
+<section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+  <div class="hero-bg absolute inset-0" style="background-image:url('images/miami-skyline.jpg')"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-navy-dark/60 via-navy-dark/40 to-navy-dark/80"></div>
+  <div class="relative z-10 px-6">
+    <p class="font-display italic text-gold-light text-lg md:text-2xl mb-4 tracking-wide fade-up">Welcome to Luxury</p>
+    <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-widest mb-8 fade-up delay-1">22 BISCAYNE BAY</h1>
+    <a href="#about" class="inline-block border-2 border-gold text-gold hover:bg-gold hover:text-navy-dark font-semibold px-10 py-4 tracking-wider transition-all duration-300 fade-up delay-2">LEARN MORE</a>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <i class="fa fa-chevron-down text-gold/60 text-xl"></i>
+  </div>
 </section>
 
 <!-- About -->
-<section id="about" class="py-20 bg-white">
-<div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-<div>
-<p class="text-primary-light uppercase tracking-widest text-sm mb-2 font-heading">Quality Living</p>
-<h2 class="text-3xl md:text-4xl font-bold mb-6 font-heading text-primary">Luxury Rental Apartments</h2>
-<p class="text-gray-600 leading-relaxed mb-6">22 Biscayne Bay offers the tranquil lifestyle you deserve. Located conveniently near the business centers of downtown, Miami International Airport, South Beach, and the Design District.</p>
-<a href="#amenities" class="text-primary-light font-semibold hover:text-primary transition"><i class="fa fa-arrow-right mr-2"></i>See more amenities</a>
-</div>
-<div>
-<img src="images/22-biscayne-bay4.jpg" alt="22 Biscayne Bay" class="rounded-lg shadow-2xl w-full">
-</div>
-</div>
-<div class="max-w-4xl mx-auto px-4 mt-16 grid grid-cols-3 gap-8 text-center">
-<div class="border-r border-gray-200 last:border-0">
-<p class="text-4xl font-bold text-primary font-heading">14</p>
-<p class="text-gray-500 mt-1">Floors</p>
-</div>
-<div class="border-r border-gray-200">
-<p class="text-4xl font-bold text-primary font-heading">10</p>
-<p class="text-gray-500 mt-1">Minutes to South Beach</p>
-</div>
-<div>
-<p class="text-4xl font-bold text-primary font-heading">5</p>
-<p class="text-gray-500 mt-1">Minutes to Downtown</p>
-</div>
-</div>
+<section id="about" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <p class="text-gold font-display italic text-lg mb-2">Quality Living</p>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight">Luxury Rental<br>Apartments</h2>
+        <p class="text-gray-600 leading-relaxed text-lg mb-6">Located in one of the most desirable neighborhoods in Miami, 22 Biscayne Bay offers an unparalleled living experience. Just minutes from Downtown Miami, Miami International Airport, the vibrant Design District, and the world-famous South Beach.</p>
+        <p class="text-gray-600 leading-relaxed text-lg">Our beautifully designed apartments combine modern elegance with comfort, providing residents with stunning views of the city skyline and Biscayne Bay. Experience the best of Miami living at 22 Biscayne Bay.</p>
+      </div>
+      <div class="reveal delay-1">
+        <div class="relative">
+          <img src="images/22-biscayne-bay4.jpg" alt="22 Biscayne Bay" class="w-full shadow-2xl">
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 border-2 border-gold -z-10"></div>
+          <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-gold -z-10"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-gray-200 reveal">
+      <div class="text-center">
+        <p class="font-display text-4xl md:text-5xl font-bold text-navy">14</p>
+        <p class="text-gold uppercase tracking-widest text-sm mt-2">Floors</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-4xl md:text-5xl font-bold text-navy">10</p>
+        <p class="text-gold uppercase tracking-widest text-sm mt-2">Min to South Beach</p>
+      </div>
+      <div class="text-center">
+        <p class="font-display text-4xl md:text-5xl font-bold text-navy">5</p>
+        <p class="text-gold uppercase tracking-widest text-sm mt-2">Min to Downtown</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Photo Tour -->
-<section id="photos" class="py-20 bg-gray-50">
-<div class="max-w-6xl mx-auto px-4">
-<p class="text-primary-light uppercase tracking-widest text-sm mb-2 text-center font-heading">Explore the Property</p>
-<h2 class="text-3xl md:text-4xl font-bold text-center mb-10 font-heading text-primary">Photo Tour</h2>
-<div class="gallery-slider relative">
-<div class="gallery-track" id="gallery-track">
-<img src="images/biscayne2-1.jpg" alt="Building Exterior">
-<img src="images/biscayne3-1.jpg" alt="Building View">
-<img src="images/biscayne-pool-1.jpg" alt="Pool">
-<img src="images/biscayne-parking-1.jpg" alt="Parking">
-<img src="images/biscayne-entrance-1.jpg" alt="Entrance">
-<img src="images/biscayne-gym-1.jpg" alt="Gym">
-<img src="images/biscayne-kitchen-1.jpg" alt="Kitchen">
-<img src="images/biscayne-living-1.jpg" alt="Living Room">
-</div>
-<button onclick="slideGallery(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full text-xl transition"><i class="fa fa-chevron-left"></i></button>
-<button onclick="slideGallery(1)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/80 hover:bg-primary text-white w-12 h-12 rounded-full text-xl transition"><i class="fa fa-chevron-right"></i></button>
-</div>
-</div>
+<section id="gallery" class="py-24 md:py-32 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-gold font-display italic text-lg mb-2">Explore</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-navy">Photo Tour</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="gallery-item col-span-2 row-span-2 reveal"><img src="images/biscayne-pool-1.jpg" alt="Pool"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-1"><img src="images/biscayne-living-1.jpg" alt="Living Room"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-2"><img src="images/biscayne-kitchen-1.jpg" alt="Kitchen"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-1"><img src="images/biscayne-entrance-1.jpg" alt="Entrance"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-2"><img src="images/biscayne-gym-1.jpg" alt="Gym"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal"><img src="images/biscayne-parking-1.jpg" alt="Parking"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-1"><img src="images/biscayne2-1.jpg" alt="Building"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal delay-2"><img src="images/biscayne3-1.jpg" alt="View"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+      <div class="gallery-item reveal"><img src="images/22-biscayne-bay4.jpg" alt="Exterior"><div class="gallery-overlay"><i class="fa fa-expand text-2xl"></i></div></div>
+    </div>
+  </div>
 </section>
 
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden items-center justify-center cursor-pointer" onclick="closeLightbox()">
+  <button class="absolute top-6 right-6 text-white text-3xl hover:text-gold transition">&times;</button>
+  <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain">
+</div>
+
 <!-- Floorplans -->
-<section id="floorplans" class="py-20 bg-white">
-<div class="max-w-6xl mx-auto px-4">
-<p class="text-primary-light uppercase tracking-widest text-sm mb-2 text-center font-heading">Select a Unit</p>
-<h2 class="text-3xl md:text-4xl font-bold text-center mb-10 font-heading text-primary">FLOOR PLANS</h2>
-<div class="flex flex-wrap justify-center gap-2 mb-10">
-<button onclick="showFloorplan(0)" class="fp-tab active px-5 py-2 rounded font-semibold text-sm bg-primary text-white font-heading">Unit 1-8</button>
-<button onclick="showFloorplan(1)" class="fp-tab px-5 py-2 rounded font-semibold text-sm bg-gray-200 text-gray-700 font-heading">Unit 2-3</button>
-<button onclick="showFloorplan(2)" class="fp-tab px-5 py-2 rounded font-semibold text-sm bg-gray-200 text-gray-700 font-heading">Unit 4-5</button>
-<button onclick="showFloorplan(3)" class="fp-tab px-5 py-2 rounded font-semibold text-sm bg-gray-200 text-gray-700 font-heading">Unit 6-7</button>
-</div>
-<div id="fp-display" class="grid md:grid-cols-2 gap-10 items-center">
-<div class="text-center"><img id="fp-img" src="images/unit1-8.png" alt="Floorplan" class="max-h-96 mx-auto"></div>
-<div id="fp-info"></div>
-</div>
-</div>
+<section id="floorplans" class="py-24 md:py-32 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-gold font-display italic text-lg mb-2">Choose Your Home</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-navy">Floor Plans</h2>
+    </div>
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12 reveal">
+      <button class="fp-tab active" data-unit="unit1-8">Unit 1-8</button>
+      <button class="fp-tab" data-unit="unit2-3">Unit 2-3</button>
+      <button class="fp-tab" data-unit="unit4-5">Unit 4-5</button>
+      <button class="fp-tab" data-unit="unit6-7">Unit 6-7</button>
+    </div>
+    <!-- Panels -->
+    <div class="fp-panel active" id="fp-unit1-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="images/unit1-8.png" alt="Unit 1-8 Floorplan" class="w-full bg-gray-50 p-4">
+        <div>
+          <h3 class="font-display text-3xl font-bold text-navy mb-4">Unit 1-8</h3>
+          <div class="space-y-3 text-gray-600 text-lg mb-8">
+            <p><i class="fa fa-bed text-gold mr-3"></i>1 Bedroom</p>
+            <p><i class="fa fa-bath text-gold mr-3"></i>1 Bathroom</p>
+            <p><i class="fa fa-ruler-combined text-gold mr-3"></i>708 sq ft</p>
+          </div>
+          <a href="#contact" class="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-3 tracking-wider transition">SCHEDULE A TOUR</a>
+        </div>
+      </div>
+    </div>
+    <div class="fp-panel" id="fp-unit2-3">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="images/unit2-3.png" alt="Unit 2-3 Floorplan" class="w-full bg-gray-50 p-4">
+        <div>
+          <h3 class="font-display text-3xl font-bold text-navy mb-4">Unit 2-3</h3>
+          <div class="space-y-3 text-gray-600 text-lg mb-8">
+            <p><i class="fa fa-bed text-gold mr-3"></i>2 Bedrooms</p>
+            <p><i class="fa fa-bath text-gold mr-3"></i>2 Bathrooms</p>
+            <p><i class="fa fa-ruler-combined text-gold mr-3"></i>1,042 sq ft</p>
+          </div>
+          <a href="#contact" class="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-3 tracking-wider transition">SCHEDULE A TOUR</a>
+        </div>
+      </div>
+    </div>
+    <div class="fp-panel" id="fp-unit4-5">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="images/unit4-5.png" alt="Unit 4-5 Floorplan" class="w-full bg-gray-50 p-4">
+        <div>
+          <h3 class="font-display text-3xl font-bold text-navy mb-4">Unit 4-5</h3>
+          <div class="space-y-3 text-gray-600 text-lg mb-8">
+            <p><i class="fa fa-bed text-gold mr-3"></i>2 Bedrooms</p>
+            <p><i class="fa fa-bath text-gold mr-3"></i>2 Bathrooms</p>
+            <p><i class="fa fa-ruler-combined text-gold mr-3"></i>1,030 sq ft</p>
+          </div>
+          <a href="#contact" class="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-3 tracking-wider transition">SCHEDULE A TOUR</a>
+        </div>
+      </div>
+    </div>
+    <div class="fp-panel" id="fp-unit6-7">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <img src="images/unit6-7.png" alt="Unit 6-7 Floorplan" class="w-full bg-gray-50 p-4">
+        <div>
+          <h3 class="font-display text-3xl font-bold text-navy mb-4">Unit 6-7</h3>
+          <div class="space-y-3 text-gray-600 text-lg mb-8">
+            <p><i class="fa fa-bed text-gold mr-3"></i>2 Bedrooms</p>
+            <p><i class="fa fa-bath text-gold mr-3"></i>2 Bathrooms</p>
+            <p><i class="fa fa-ruler-combined text-gold mr-3"></i>1,132 sq ft</p>
+          </div>
+          <a href="#contact" class="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-3 tracking-wider transition">SCHEDULE A TOUR</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Amenities -->
-<section id="amenities" class="amenities-bg relative py-24">
-<div class="absolute inset-0 bg-primary/85"></div>
-<div class="relative z-10 max-w-6xl mx-auto px-4 text-center text-white">
-<p class="uppercase tracking-widest text-sm mb-2 text-primary-light font-heading">Apartment Amenities</p>
-<h2 class="text-3xl md:text-4xl font-bold mb-16 font-heading">LUXURY LIVING WITH STUNNING CITY &amp; BAY VIEWS</h2>
-<div class="grid grid-cols-2 md:grid-cols-3 gap-10">
-<div><i class="fa fa-car text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Covered Parking Garage</p></div>
-<div><i class="fa fa-tshirt text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Full Washer &amp; Dryer</p></div>
-<div><i class="fa fa-dumbbell text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Fully-Equipped Gym</p></div>
-<div><i class="fa fa-swimming-pool text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Large Swimming Pool</p></div>
-<div><i class="fa fa-utensils text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Luxury Kitchen Appliances</p></div>
-<div><i class="fa fa-tv text-primary-light text-4xl mb-4"></i><p class="font-semibold font-heading text-lg">Pre-Wired Cable TV</p></div>
-</div>
-</div>
+<section id="amenities" class="relative py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0" style="background-image:url('images/pool-glasses-med.jpg');background-size:cover;background-position:center;background-attachment:fixed"></div>
+  <div class="absolute inset-0 bg-navy-dark/85"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <p class="text-gold font-display italic text-lg mb-2 reveal">Apartment Amenities</p>
+    <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-16 tracking-wide reveal">LUXURY LIVING WITH STUNNING<br>CITY &amp; BAY VIEWS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 reveal">
+      <div class="amenity-card">
+        <i class="fa fa-car text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Covered Parking</h3>
+      </div>
+      <div class="amenity-card">
+        <i class="fa fa-shirt text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Washer &amp; Dryer</h3>
+      </div>
+      <div class="amenity-card">
+        <i class="fa fa-dumbbell text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Gym</h3>
+      </div>
+      <div class="amenity-card">
+        <i class="fa fa-water text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Pool</h3>
+      </div>
+      <div class="amenity-card">
+        <i class="fa fa-kitchen-set text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Kitchen Appliances</h3>
+      </div>
+      <div class="amenity-card">
+        <i class="fa fa-tv text-gold text-3xl mb-4"></i>
+        <h3 class="text-white font-semibold text-lg">Cable TV</h3>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 bg-gray-50">
-<div class="max-w-6xl mx-auto px-4">
-<p class="text-primary-light uppercase tracking-widest text-sm mb-2 text-center font-heading">Get in Touch</p>
-<h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-heading text-primary">Contact Us</h2>
-<div class="grid md:grid-cols-3 gap-10">
-<!-- Contact Info -->
-<div>
-<h3 class="font-bold text-lg mb-4 font-heading text-primary">22 Biscayne Bay</h3>
-<div class="space-y-3 text-gray-600">
-<p><i class="fa fa-map-marker-alt text-primary-light mr-3"></i>615 NE 22nd Street, Miami, FL 33137</p>
-<p><i class="fa fa-phone text-primary-light mr-3"></i>305.576.5606</p>
-<p><i class="fa fa-envelope text-primary-light mr-3"></i><a href="mailto:bay22biscayne@gmail.com" class="hover:text-primary">bay22biscayne@gmail.com</a></p>
-</div>
-<img src="images/melo-logo.png" alt="Melo Group" class="mt-6 h-8">
-<a href="brochure.pdf" target="_blank" class="inline-block mt-4 text-primary-light font-semibold hover:text-primary transition text-sm"><i class="fa fa-download mr-1"></i> Download Brochure</a>
-</div>
-<!-- Map -->
-<div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.5!2d-80.1895!3d25.7945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6f0b0b0b0b1%3A0x1!2s615+NE+22nd+St%2C+Miami%2C+FL+33137!5e0!3m2!1sen!2sus!4v1" width="100%" height="300" style="border:0;border-radius:8px" allowfullscreen loading="lazy"></iframe>
-</div>
-<!-- Form -->
-<div>
-<form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you! We will contact you soon.');">
-<input type="text" placeholder="Full Name" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
-<input type="email" placeholder="Email" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary">
-<textarea placeholder="Message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary"></textarea>
-<button type="submit" class="bg-primary hover:bg-primary-light text-white font-bold px-8 py-3 rounded transition w-full font-heading tracking-wider">SEND MESSAGE</button>
-</form>
-</div>
-</div>
-</div>
+<section id="contact" class="py-24 md:py-32 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-gold font-display italic text-lg mb-2">Get in Touch</p>
+      <h2 class="font-display text-4xl md:text-5xl font-bold text-navy">Contact Us</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-10 reveal">
+      <!-- Info -->
+      <div>
+        <h3 class="font-display text-2xl font-bold text-navy mb-6">22 Biscayne Bay</h3>
+        <div class="space-y-4 text-gray-600">
+          <p><i class="fa fa-map-marker-alt text-gold mr-3"></i>615 NE 22nd Street, Miami, FL 33137</p>
+          <p><i class="fa fa-phone text-gold mr-3"></i><a href="tel:3055765606" class="hover:text-gold transition">305.576.5606</a></p>
+          <p><i class="fa fa-envelope text-gold mr-3"></i><a href="mailto:bay22biscayne@gmail.com" class="hover:text-gold transition">bay22biscayne@gmail.com</a></p>
+          <p><i class="fab fa-facebook text-gold mr-3"></i><a href="https://www.facebook.com/22-Biscayne-Bay-173418216038673" target="_blank" class="hover:text-gold transition">Facebook</a></p>
+          <p><i class="fa fa-download text-gold mr-3"></i><a href="brochure.pdf" target="_blank" class="hover:text-gold transition font-semibold">Download Brochure</a></p>
+        </div>
+      </div>
+      <!-- Map -->
+      <div class="min-h-[300px]">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.1!2d-80.191!3d25.797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b6a08d0f86c7%3A0x1!2s615+NE+22nd+St%2C+Miami%2C+FL+33137!5e0!3m2!1sen!2sus!4v1" class="w-full h-full min-h-[300px] border-0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <!-- Form -->
+      <div>
+        <form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you! We will contact you shortly.')">
+          <input type="text" placeholder="Your Name" required class="contact-input">
+          <input type="email" placeholder="Your Email" required class="contact-input">
+          <input type="tel" placeholder="Your Phone" class="contact-input">
+          <textarea placeholder="Your Message" rows="4" required class="contact-input resize-none"></textarea>
+          <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-white font-semibold py-3 tracking-wider transition">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-900 text-gray-400 py-8">
-<div class="max-w-6xl mx-auto px-4 text-center">
-<a href="https://www.facebook.com/22-Biscayne-Bay-173418216038673" target="_blank" class="text-gray-400 hover:text-white text-xl mb-4 inline-block"><i class="fab fa-facebook-f"></i></a>
-<p class="text-sm">Melo Group &copy; 2018. All rights reserved.</p>
-</div>
+<footer class="bg-navy-dark py-12">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <img src="images/melo-logo.png" alt="Melo Group" class="h-10 brightness-0 invert opacity-70">
+    <p class="text-gray-400 text-sm">&copy; 2025 22 Biscayne Bay. All rights reserved. A Melo Group Property.</p>
+    <a href="https://www.facebook.com/22-Biscayne-Bay-173418216038673" target="_blank" class="text-gray-400 hover:text-gold transition text-xl"><i class="fab fa-facebook-f"></i></a>
+  </div>
 </footer>
 
 <script>
-// Mobile menu
-document.getElementById('menu-toggle').addEventListener('click',function(){
-const m=document.getElementById('mobile-menu');
-m.style.maxHeight=m.style.maxHeight==='0px'||!m.style.maxHeight?'500px':'0px';
+// Sticky header
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
 });
-document.querySelectorAll('#mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
-document.getElementById('mobile-menu').style.maxHeight='0px';
+
+// Mobile menu
+document.getElementById('menu-toggle').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.add('hidden');
 }));
 
-// Gallery slider
-let slidePos=0;
-function slideGallery(dir){
-const track=document.getElementById('gallery-track');
-const imgs=track.querySelectorAll('img');
-const w=imgs[0].getBoundingClientRect().width;
-const visible=Math.round(track.parentElement.offsetWidth/w);
-const max=imgs.length-visible;
-slidePos=Math.max(0,Math.min(max,slidePos+dir));
-track.style.transform=`translateX(-${slidePos*w}px)`;
-}
-
-// Floorplans
-const units=[
-{name:'Unit 1-8',img:'unit1-8.png',bed:'1 BR / 1 BA',sqft:'708'},
-{name:'Unit 2-3',img:'unit2-3.png',bed:'2 BR / 2 BA',sqft:'1,042'},
-{name:'Unit 4-5',img:'unit4-5.png',bed:'2 BR / 2 BA',sqft:'1,030'},
-{name:'Unit 6-7',img:'unit6-7.png',bed:'2 BR / 2 BA',sqft:'1,132'},
-];
-function showFloorplan(i){
-const u=units[i];
-document.getElementById('fp-img').src='images/'+u.img;
-document.getElementById('fp-info').innerHTML=`
-<h3 class="text-2xl font-bold text-primary mb-6 font-heading">${u.name}</h3>
-<div class="space-y-3">
-<p class="flex justify-between border-b pb-2"><span class="font-semibold">Bedrooms / Bathrooms</span><span>${u.bed}</span></p>
-<p class="flex justify-between border-b pb-2"><span class="font-semibold">Total Sq. Ft.</span><span>${u.sqft}</span></p>
-</div>
-<a href="#contact" class="inline-block mt-8 bg-primary hover:bg-primary-light text-white font-bold px-8 py-3 rounded transition font-heading tracking-wider">SCHEDULE A TOUR</a>`;
-document.querySelectorAll('.fp-tab').forEach((b,j)=>{
-b.className='fp-tab px-5 py-2 rounded font-semibold text-sm font-heading '+(j===i?'bg-primary text-white':'bg-gray-200 text-gray-700');
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({behavior:'smooth'});
+  });
 });
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.reveal, .fade-up').forEach(el => observer.observe(el));
+
+// Floorplan tabs
+document.querySelectorAll('.fp-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.fp-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.fp-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('fp-' + tab.dataset.unit).classList.add('active');
+  });
+});
+
+// Lightbox
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox').classList.add('flex');
+  });
+});
+function closeLightbox() {
+  document.getElementById('lightbox').classList.add('hidden');
+  document.getElementById('lightbox').classList.remove('flex');
 }
-showFloorplan(0);
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 </script>
 </body>
 </html>
