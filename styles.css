@@ -1,0 +1,41 @@
+html { scroll-behavior: smooth; }
+
+.hero {
+  background: url('images/miami-skyline.jpg') center/cover no-repeat;
+  min-height: 100vh;
+}
+
+.amenities-bg {
+  background: url('images/pool-glasses-med.jpg') center/cover no-repeat fixed;
+}
+
+.gallery-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.gallery-track img {
+  min-width: 100%;
+  object-fit: cover;
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .gallery-track img {
+    min-width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-track img {
+    min-width: 33.333%;
+  }
+}
+
+.floorplan-content { display: none; }
+.floorplan-content.active { display: block; }
