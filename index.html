@@ -252,13 +252,25 @@
       </div>
       <!-- Form -->
       <div>
-        <form class="space-y-4" onsubmit="event.preventDefault();alert('Thank you! We will contact you shortly.')">
-          <input type="text" placeholder="Your Name" required class="contact-input">
-          <input type="email" placeholder="Your Email" required class="contact-input">
-          <input type="tel" placeholder="Your Phone" class="contact-input">
-          <textarea placeholder="Your Message" rows="4" required class="contact-input resize-none"></textarea>
+        <form class="space-y-4" id="contactForm">
+          <input type="text" id="cf-name" placeholder="Your Name" required class="contact-input">
+          <input type="email" id="cf-email" placeholder="Your Email" required class="contact-input">
+          <input type="tel" id="cf-phone" placeholder="Your Phone" class="contact-input">
+          <textarea id="cf-message" placeholder="Your Message" rows="4" required class="contact-input resize-none"></textarea>
           <button type="submit" class="w-full bg-gold hover:bg-gold-dark text-white font-semibold py-3 tracking-wider transition">SEND MESSAGE</button>
         </form>
+        <script>
+        document.getElementById('contactForm').addEventListener('submit',function(e){
+          e.preventDefault();
+          var n=document.getElementById('cf-name').value;
+          var em=document.getElementById('cf-email').value;
+          var ph=document.getElementById('cf-phone').value;
+          var msg=document.getElementById('cf-message').value;
+          var body='Name: '+n+'%0D%0AEmail: '+em+'%0D%0APhone: '+(ph||'N/A')+'%0D%0A%0D%0A'+encodeURIComponent(msg);
+          var subject=encodeURIComponent('22 Biscayne Bay Inquiry from '+n);
+          window.location.href='mailto:bay22biscayne@gmail.com?subject='+subject+'&body='+body;
+        });
+        </script>
       </div>
     </div>
   </div>
