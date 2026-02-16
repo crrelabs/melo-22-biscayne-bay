@@ -4,8 +4,8 @@
 html { scroll-behavior: smooth; }
 
 /* Header */
-#header { transition: background 0.4s, padding 0.4s, box-shadow 0.4s; }
-#header.scrolled { background: rgba(15, 28, 40, 0.95); backdrop-filter: blur(10px); box-shadow: 0 2px 30px rgba(0,0,0,0.3); }
+#header { transition: background 0.4s, padding 0.4s, box-shadow 0.4s; background: #2c3e5a; }
+#header.scrolled { background: #2c3e5a; backdrop-filter: blur(10px); box-shadow: 0 2px 30px rgba(0,0,0,0.3); }
 #header.scrolled .nav-link { color: rgba(255,255,255,0.85); }
 
 .nav-link {
